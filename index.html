@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Encanto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+        :root {
+            --main-bg-color: #D2B48C;
+        }
+
+        * {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            transition: .2s linear;
+        }
+
+        body {
+            background-color: var(--main-bg-color);
+            height: 3000px;
+            font-size: 16px;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        section {
+            padding: 2rem 9%;
+        }
+
+        /* css header inicio */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 9%;
+            z-index: 3;
+            background: rgb(80, 52, 40);
+        }
+
+        .header .logo img {
+            height: 6rem;
+        }
+
+        .logo {
+            color: #ffd39dc5;
+            font-size: 3rem;
+        }
+
+        .header .navbar #close {
+            display: none;
+            position: absolute;
+            top: 4rem;
+            right: 2rem;
+            cursor: pointer;
+            font-size: 3rem;
+            color: #fff;
+        }
+
+        .header .navbar a {
+            font-size: 2rem;
+            margin-right: 2rem;
+            color: #fff;
+        }
+
+
+        .navbar a {
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #ffd39dc5;
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 70%;
+        }
+
+
+        .header #menu {
+            display: none;
+            cursor: pointer;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        .carrinho {
+            color: #ffd39dc5;
+            font-size: 3rem;
+        }
+
+
+        /* css final header */
+
+        /* css home inicio */
+
+        .home {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: rgb(121, 72, 51);
+        }
+
+        .home .content {
+            position: relative;
+            z-index: 2;
+            flex: 1 1 40rem;
+            padding-top: 6.5rem;
+            margin-top: 1rem;
+            display: inline-block;
+            padding: .9rem 3rem;
+            font-size: 1.7rem;
+            color: #fff;
+            cursor: auto;
+            letter-spacing: .2rem;
+        }
+
+        .home .content .titulo {
+            font-size: 6rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .home .content .titulo span {
+            text-transform: uppercase;
+            color: #ffd39dc5;
+            opacity: 1;
+        }
+
+        .home .content .descricao {
+            font-size: 2rem;
+            font-weight: lighter;
+            line-height: 1.8;
+            padding: 1rem 0;
+            color: #fff;
+        }
+
+        .home .image {
+            flex: 1 1 30rem;
+        }
+
+        .home .image img {
+            width: 80%;
+        }
+
+        .degrade {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+
+        /* css final home */
+
+
+        /* CONTAINER DO CHEF */
+
+        .containerChef {
+            position: relative;
+            width: 100%;
+            height: 580px;
+            background-color: #ffd39dc5;
+        }
+
+        .imgchef {
+            position: absolute;
+            left: 80px;
+            top: 140px;
+            width: 300px;
+            height: 300px;
+            background-color: #2a201c;
+            border-radius: 100%;
+            z-index: 2;
+        }
+
+        .imgC {
+            width: 300px;
+            position: relative;
+            right: 3px;
+            top: -40px;
+        }
+
+        .sombraimg {
+            position: absolute;
+            left: 100px;
+            top: 180px;
+            width: 300px;
+            height: 280px;
+            background-color: rgb(80, 52, 40);
+            border-radius: 60%;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            z-index: 1;
+            transform: rotate(-28deg);
+        }
+
+        .descChef {
+            position: absolute;
+            left: 500px;
+            top: 170px;
+        }
+
+        .titulogeral {
+            font-size: 48px;
+            top: 30px;
+            font-style: inherit;
+            color: #2a201c;
+        }
+
+
+
+
+        .titulochef1,
+        .titulochef2 {
+            font-size: 30px;
+        }
+
+        .titulochef2 {
+            color: #8a533d;
+        }
+
+
+        .titulochef1 {
+            color: rgb(105, 70, 55);
+        }
+
+        .pChef {
+            width: 600px;
+            text-align: justify;
+        }
+
+
+        /* MENU PEDIDOSSSSSS */
+
+        .containermenu {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+        .itensdomenu {
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .imagensmenu {
+            height: 200px;
+            width: 210px;
+            border-radius: 100px;
+            background-color: #ffedd1;
+            border: solid 2px #2a201c;
+            margin: 30px;
+            position: relative;
+        }
+
+        .descricaoitens {
+            position: absolute;
+            top: 50px;
+            left: 260px;
+        }
+
+        button {
+            height: 40px;
+            width: 200px;
+            background-color: rgb(121, 72, 51);
+            color: #fff;
+            cursor: pointer;
+            border-radius: 20px;
+            border: 0;
+            font-size: 16px;
+        }
+
+        .titulomenu {
+            font-size: 50px;
+        }
+
+        .txtdesc {
+            width: 360px;
+        }
+
+        /* IMAGENS DO MENU  */
+
+        .imagensmenu img {
+            width: 320px;
+            top: -70px;
+            left: -60px;
+            object-fit: contain;
+            position: absolute;
+        }
+
+        .estiloimg1 img {
+            width: 120px;
+            top: -10px;
+            left: 45px;
+        }
+
+        .estiloimg2 img {
+            width: 300px;
+            top: -50px;
+            left: -45px;
+        }
+
+        .estiloimg3 img {
+            width: 220px;
+            top: -100px;
+            left: 2px;
+        }
+
+        .estiloimg4 img {
+            width: 220px;
+            top: 10px;
+            left: -10px;
+        }
+
+        .estiloimg5 img {
+            width: 330px;
+            top: -40px;
+            left: -63px;
+        }
+
+        .estiloimg6 img {
+            width: 270px;
+            top: 0px;
+            left: -35px;
+        }
+
+        .estiloimg7 img {
+            width: 200px;
+            top: 0px;
+            left: 0px;
+            transform: rotate(-4deg);
+        }
+
+        .estiloimg8 img {
+            width: 230px;
+            top: 20px;
+            left: -13px;
+        }
+
+        .estiloimg9 img {
+            height: 310px;
+            width: 230px;
+            top: -45px;
+            left: -15px;
+        }
+
+        .estiloimg10 img {
+            width: 220px;
+            top: -20px;
+            left: -10px;
+        }
+
+
+        /* CARRINHO */
+        .carrinho1 {
+            position: fixed;
+            top: 0;
+            margin: 0;
+            right: -100%;
+            width: 360px;
+            min-height: 100vh;
+            padding: 20px;
+            cursor: pointer;
+            background: #D2B48C;
+            box-shadow: -2px 0 4px hsl(0 2% 15% / 10%);
+            transition: 0.3s;
+        }
+
+        .carrinho1.ativo {
+            right: 0;
+        }
+
+        .carrinho1 .conteudo-carrinho {
+            margin-top: 2rem;
+        }
+
+        .conteudo-carrinho {
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            margin-left: -10px;
+            padding-right: 20px;
+        }
+
+        .btn-comprar {
+            display: flex;
+            margin: 1.5rem auto 0 auto;
+            padding: 12px 20px;
+            border: none;
+            background: rgb(121, 72, 51);
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 500;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .btn-comprar:hover,
+        button:hover {
+            background: #ffedd1;
+            color: #2a201c;
+        }
+
+        .btn-comprar:disabled {
+            background: #ffedd1;
+            color: #2a201c;
+            cursor: not-allowed;
+        }
+
+        .titulo-carrinho {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        .caixa-carrinho {
+            display: grid;
+            grid-template-columns: 32% 50% 18%;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .img-carrinho {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .titulo-produto-carrinho {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .preco-carrinho {
+            font-size: 14px;
+            position: relative;
+            top: 17px;
+            left: -50px;
+        }
+
+        .quantidade-carrinho {
+            border: 1px solid black;
+            outline-color: #2a201c;
+            width: 2.4rem;
+            left: 210px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .remover-carrinho {
+            font-size: 19px;
+            color: #913917;
+            cursor: pointer;
+            margin-left: 70px;
+        }
+
+        .total {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+            border-top: 1px solid black;
+        }
+
+        .titulo-total {
+            position: relative;
+            left: -55px;
+            top: 5px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .preco-total {
+            position: relative;
+            left: -45px;
+            padding: 2px;
+        }
+
+        #fechar-carrinho {
+            position: absolute;
+            top: 1rem;
+            right: 0.8rem;
+            font-size: 2rem;
+            color: black;
+            cursor: pointer;
+        }
+
+        #icone-carrinho {
+            position: relative;
+            font-size: 3.6rem;
+            color: #d3ad7f;
+            cursor: pointer;
+        }
+
+        #quantidade-carrinho {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #8a533d;
+            color: white;
+            font-size: 0.9rem;
+            border-radius: 50%;
+            padding: 3px 6px;
+        }
+
+
+        /* FOOTER */
+
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: rgb(80, 52, 40);
+        }
+
+        footer .col {
+            display: flex;
+            flex-direction: column;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 20px;
+            line-height: 1.6em;
+        }
+
+        footer .logo {
+            margin-bottom: 30px;
+        }
+
+        footer h4 {
+            font-size: 14px;
+            padding-bottom: 20px;
+            margin-top: 10px;
+            color: #8a533d;
+        }
+
+        footer p {
+            font-size: 13px;
+            margin: 0 0 8px 0;
+            color: #ffedd1;
+            margin-right: 100px;
+        }
+
+        footer .icon {
+            margin-top: 10px;
+            width: 100px;
+        }
+
+        footer .icon {
+            color: #fdfdfd;
+            padding-right: 4px;
+            cursor: pointer;
+        }
+
+
+        footer .icones {
+            width: 25px;
+            margin-top: -20px;
+            margin-right: 15px;
+        }
+
+
+        footer a {
+            text-decoration: none;
+            color: #ffedd1;
+        }
+
+        hr {
+            border: none;
+            background-color: rgb(80, 52, 40);
+            border-top: #2a201c;
+            height: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+
+    <!-- Inicio Header/Navbar -->
+
+    <header class="header">
+        <a href="#" class="logo">
+            <i class='bx bx-cake'></i>
+
+        </a>
+        <nav class="navbar">
+            <div id="close" class="fas fa-times"></div>
+            <a href="#section1" class="nav_item">Bolos</a>
+            <a href="#section2" class="nav_item">Cupcakes</a>
+            <a href="#section3" class="nav_item">Tortas</a>
+            <a href="#section4" class="nav_item">Diversos</a>
+            <a href="#section5" class="nav_item">Bebidas</a>
+        </nav>
+        <!-- <i class='bx bxs-coffee-alt carrinho' id="icone-carrinho">
+        <span id="quantidade-carrinho">0</span>
+    </i> -->
+        <i class='bx bx-shopping-bag' id="icone-carrinho">
+            <span id="quantidade-carrinho">0</span>
+        </i>
+
+        <div class="carrinho1">
+            <h2 class="titulo-carrinho">Seu Carrinho</h2>
+            <div class="conteudo-carrinho"></div>
+            <div class="total">
+                <div class="titulo-total">Total</div>
+                <div class="preco-total">R$0</div>
+            </div>
+            <a href="Forms-Confeitaria.html" id="link-comprar">
+                <button type="button" class="btn-comprar" id="btn-comprar">Comprar Agora</button>
+            </a>
+
+            <i class='bx bx-x' id="fechar-carrinho"></i>
+        </div>
+        <div id="menu" class="fas fa-bars"></div>
+    </header>
+    <!-- Final Header -->
+
+    <!-- Inicio home -->
+    <section class="home">
+        <div class="degrade"></div>
+        <div class="content">
+            <h1 class="titulo">DOCE <span>ENCANTO</span></h1>
+            <p class="descricao">Relaxe, sorria e permita-se um momento doce feito com carinho.</p>
+        </div>
+
+        <div class="image">
+            <img src="IMG/bolofundo.png" alt="" data-speed="-3" class="move">
+        </div>
+    </section>
+
+
+    <!-- SEÇÃO CONTAINER DO CHEF -->
+
+    <div class="containerChef">
+        <br>
+        <center>
+            <h1 class="titulogeral">Sobre Nós</h1>
+        </center>
+        <br>
+
+        <div class="imgchef"><img class="imgC" src="img/confeiteira.png" alt=""></div>
+        <div class="sombraimg"></div>
+
+        <div class="descChef">
+            <h2 class="titulochef1">Sabores que encantam, </h2>
+            <h2 class="titulochef2">momentos que marcam.</h2><br>
+
+            <p class="pChef">A Doce Encanto nasceu do amor pela confeitaria artesanal e do desejo de tornar momentos
+                mais doces e especiais. Com receitas feitas com carinho e ingredientes selecionados, criamos delícias
+                que encantam no sabor e na apresentação. Cada doce é feito para adoçar a vida — com afeto, cuidado e um
+                toque de encanto.</p>
+
+        </div>
+    </div>
+
+
+    <div id="section1"></div>
+    <!-- Final Home -->
+
+    <br><br><br>
+    <div class="container">
+
+
+        <!-- SEÇÃO MENU - CAFÉS -->
+
+        <center>
+            <h1 class="titulomenu">Bolos</h1>
+        </center>
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg10"><img src="IMG/bolo1.png" alt="Affogato"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Choco Tentação</h1>
+                    <p class="txtdesc">Bolo de chocolate com recheio cremoso e cobertura intensa.</p>
+                    <br>
+                    <h4 class="preco">R$89.99</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Choco Tentação', 89.99, 'IMG/bolo1.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg10"><img src="IMG/bolo2.png" alt="Cacau Supremo"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Cacau Supremo</h1>
+                    <p class="txtdesc">Bolo alto de chocolate com cobertura rica e confeitos.</p>
+                    <br>
+                    <h4 class="preco">R$79.99</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Cacau Supremo', 79.99, 'IMG/bolo2.png')">Compre agora</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg10"><img src="IMG/pedaco1.png" alt="Toque de Amor"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Toque de Amor</h1>
+                    <p class="txtdesc">Fatia de bolo com creme e morangos frescos.</p>
+                    <br>
+                    <h4 class="preco">R$19.50</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Toque de Amor', 19.50, 'IMG/pedaco1.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg10"><img src="IMG/pedaco2.png" alt="Morango Real"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Morango Real</h1>
+                    <p class="txtdesc">Fatia de bolo branco com chantilly e morangos.</p>
+                    <br>
+                    <h4 class="preco">R$17.90</h4>
+                    <br>
+                    <button id="section2"
+                        onclick="adicionarAoCarrinho('Morango Real', 17.90, 'IMG/pedaco2.png',)">Compre agora</button>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <hr><br>
+        <!-- SEÇÃO MENU - CUPCAKES -->
+
+        <center>
+            <h1 class="titulomenu">Cupcakes</h1>
+        </center>
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg2"><img src="IMG/cupcake1.png" alt="Mini Tentação"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Mini Tentação</h1>
+                    <p class="txtdesc">Mini cupcake com massa de chocolate e cobertura suave.</p>
+                    <br>
+                    <h4 class="preco">R$15.50</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Mini Tentação', 15.50, 'IMG/cupcake1.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg10"><img src="IMG/cupcake2.png" alt="ChocoGotas"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">ChocoGotas</h1>
+                    <p class="txtdesc">Cupcake de baunilha com gotas de chocolate.</p>
+                    <br>
+                    <h4 class="preco">R$14.50</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('ChocoGotas', 14.50, 'IMG/cupcake2.png')">Compre agora</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg3"><img src="IMG/cupcake3.png" alt="ChocoChoco"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">ChocoChoco</h1>
+                    <p class="txtdesc">Cupcake de chocolate com cobertura cremosa.</p>
+                    <br>
+                    <h4 class="preco">R$16.50</h4>
+                    <br>
+                    <button id="section3" onclick="adicionarAoCarrinho('ChocoChoco', 16.50, 'IMG/cupcake3.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+
+
+        </div>
+        <br>
+        <hr><br>
+
+
+
+        <!-- SEÇÃO MENU - TORTAS -->
+
+        <center>
+            <h1 class="titulomenu">Tortas</h1>
+        </center>
+
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg9"><img src="IMG/torta1.png" alt="Mirtilícia"></div>
+                <div class="descricaoitens">
+                    <h1>Mirtilícia</h1>
+                    <p>Torta de mirtilo com massa crocante e recheio suave.</p>
+                    <br>
+                    <h4 class="preco">R$27.99</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Mirtilícia', 27.99, 'IMG/torta1.png')">Compre agora</button>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg9"><img src="IMG/torta2.png" class="imagem-produto"
+                        alt="Limone Dourado"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc titulo-produto">Limone Dourado</h1>
+                    <p class="txtdesc">Torta de limão com base crocante e sabor cítrico.</p>
+                    <br>
+                    <h4 class="preco">R$25.90</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Limone Dourado', 25.90, 'IMG/torta2.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg9"><img src="IMG/torta3.png" alt="Sol de Maracujá"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Sol de Maracujá</h1>
+                    <p class="txtdesc">Torta de maracujá leve com cobertura brilhante.</p>
+                    <br>
+                    <h4 class="preco">R$26.99</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Sol de Maracujá', 26.99, 'IMG/torta3.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg9"><img src="IMG/torta4.png" alt="Rosa Choco"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Rosa Choco</h1>
+                    <p class="txtdesc">Torta de chocolate com creme rosa em camadas.</p>
+                    <br>
+                    <h4 class="preco">R$24.99</h4>
+                    <br>
+                    <button id="section4" onclick="adicionarAoCarrinho('Rosa Choco', 24.99, 'IMG/torta4.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <hr><br>
+
+        <!-- SEÇÃO MENU - DOCES -->
+
+        <center>
+            <h1 class="titulomenu">Diversos</h1>
+        </center>
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg7"><img src="IMG/brownie1.png" alt="Brownie Delírio"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Brownie Delírio</h1>
+                    <p class="txtdesc">Bolinho macio e doce, recheado e coberto com pedaços de chocolate.</p>
+                    <br>
+                    <h4 class="preco">R$12.90</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Brownie Delírio', 12.90, 'IMG/brownie1.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg7"><img src="IMG/panqueca1.png" alt="Doce Amanhecer"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Doce Amanhecer</h1>
+                    <p class="txtdesc">Panquecas fofas com calda doce e toque amanteigado.</p>
+                    <br>
+                    <h4 class="preco">R$20.99</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Doce Amanhecer', 20.99, 'IMG/panqueca1.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg7"><img src="IMG/donut1.png" alt="Donut Black"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Donut Black</h1>
+                    <p class="txtdesc">Donut com cobertura de chocolate e crocância.</p>
+                    <br>
+                    <h4 class="preco">R$10.99</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Donut Black', 10.99, 'IMG/donut1.png')">Compre agora</button>
+                </div>
+            </div>
+
+
+
+        </div>
+        <br>
+        <hr class="separacaoitens"><br>
+        <!-- SEÇÃO MENU - CHÁS -->
+        <center>
+            <h1 class="titulomenu">Bebidas</h1>
+        </center>
+        <div class="containermenu">
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg1"><img src="IMG/frapee1.png" alt="Cacau Cream"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Cacau Cream</h1>
+                    <p class="txtdesc">Bebida gelada de chocolate com cobertura de chantilly.</p>
+                    <br>
+                    <h4 class="preco">R$19.90</h4>
+                    <br>
+                    <button onclick="adicionarAoCarrinho('Cacau Cream', 19.90, 'IMG/frapee1.png')">Compre agora</button>
+                </div>
+            </div>
+
+            <div class="itensdomenu">
+                <div class="imagensmenu estiloimg4"><img src="img/cafe1.png" alt="Café Puro"></div>
+                <div class="descricaoitens">
+                    <h1 class="txtdesc">Café Puro</h1>
+                    <p class="txtdesc">Café expresso, puro e encorpado.</p>
+                    <br>
+                    <h4 class="preco">R$8.90</h4>
+                    <br>
+                    <button id="section5" onclick="adicionarAoCarrinho('Café Puro', 8.90, 'img/cafe1.png')">Compre
+                        agora</button>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+
+
+
+    </div>
+    <br>
+    <footer>
+        <div class="col">
+            <h4>Contatos</h4>
+            <p><strong>E-mail: </strong>coffeland@gmail.com</p>
+            <p><strong>Telefone: </strong> 11 91327-0984</p>
+            <p><strong>Horário: </strong> 8:00 às 20:00 - Seg a Seg</p>
+            <div class="icon">
+                <a href="https://www.instagram.com/" target="_blank"><img class="icones"
+                        src="https://larissasantos2.github.io/Imagens-Cafe/insta-removebg-preview.png " alt=""></a>
+                <a href="https://web.whatsapp.com/" target="_blank"><img class="icones"
+                        src="https://larissasantos2.github.io/Imagens-Cafe/whatts-removebg-preview%20(1).png "
+                        alt=""></a>
+
+            </div>
+        </div>
+        </div>
+
+        <div class="col">
+            <h4>Unidades</h4>
+            <p>Casa Verde</p>
+            <p>Pinheiros</p>
+            <p>Santana</p>
+            <p>Avenida Imirim</p>
+            <p>Vila Madalena</p>
+        </div>
+
+        <div clpss="col">
+            <h4>Cardápio</h4>
+            <p> <a href="#section1">Bolos</a></p>
+            <p> <a href="#section2">Cupcakes</a></p>
+            <p> <a href="#section3">Tortas</a></p>
+            <p> <a href="#section4">Diversos</a></p>
+            <p> <a href="#section5">Bebidas</a></p>
+        </div>
+
+        </div>
+    </footer>
+
+
+    </div>
+
+
+    <script src="carrinho.js"></script>
+    <script>
+
+        // Mouse mover imagem
+        document.addEventListener('mousemove', move);
+        function move(e) {
+            this.querySelectorAll('.move').forEach(layer => {
+                const speed = layer.getAttribute('data-speed');
+                const x = (window.innerWidth - e.pageX * speed) / 120;
+                const y = (window.innerWidth - e.pageY * speed) / 120;
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        }
+
+        // Scroll suave
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuLinks = document.querySelectorAll(".menu a");
+
+            menuLinks.forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
