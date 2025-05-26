@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    line-height: 1.4em;
+    font-family: 'Nunito', sans-serif;
+}
+
+.titulo {
+    font-size: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    top: 30px;
+    left: 800px;
+}
+
+.titulo span {
+    color: #d3ad7f;
+    position: absolute;
+    left: 120px;
+    top: 100px;
+}
+
+.containerForms{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right, #D2B48C, #c4b7b7);
+    overflow: hidden;
+}
+
+.containerForms:before{
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, #0c0502, rgb(121, 72, 51));
+    top: -10%;
+    left: 55%;
+    transform: translateY(-50%);
+}
+
+.image img{
+    position: absolute;
+    width: 400px;
+    left: 730px;
+    top: 250px;
+}
+
+
+
+.formulario{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cadastro{
+    position: relative;
+    top: 70px;
+    left: 50px;
+    width: 670px;
+    height: 500px;
+}
+
+.titulocad{
+    position: absolute;
+    left: 160px;
+    font-size: 50px;
+    font-family: 'Nunito', sans-serif;
+}
+
+label{
+    font-size: 19px;
+    position: absolute;
+}
+
+
+input, select{
+  position: absolute;
+    width: 270px;
+    height: 30px;
+    border-radius: 30px;
+    border: 0;
+    padding-left: 15px; 
+    box-sizing: border-box; 
+}
+
+input::placeholder{
+    position: relative;
+    left: 10px;
+}
+
+
+.inp1{
+    left: 30px;
+    top: 110px;
+}
+
+.lab1{
+    left: 40px;
+    top: 80px;
+}
+
+.inp2{
+    left: 330px;
+    top: 110px;
+}
+
+.lab2{
+    left: 340px;
+    top: 80px;
+}
+
+.inp3{
+    left: 30px;
+    top: 190px;
+}
+
+.lab3{
+    left: 40px;
+    top: 160px;
+}
+
+.inp4{
+    left: 330px;
+    top: 190px;
+}
+
+.lab4{
+    left: 340px;
+    top: 160px;
+}
+
+.inp5{
+    width: 570px;
+    height: 30px;
+    border-radius: 30px;
+    left: 30px;
+    top: 280px;
+}
+
+.lab5{
+    left: 40px;
+    top: 250px;
+}
+
+button{
+    position: absolute;
+    background-color: #422112;
+    color: #fff;
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    left: 210px;
+    top: 430px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    background: #ffedd1;
+    color: #2a201c;
+}
+
+p{
+    position: absolute;
+    font-size: 25px;
+    left: 40px;
+    top: 350px;
+}
+
+.valor{
+    left: 210px;
+}
+
+</style>
+
+<body>
+       <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+    
+<div class="containerForms">
+
+    <form class="formulario" id="frm">
+
+        <div class="cadastro">
+
+<h1 class="titulocad">Identificação</h1>
+
+        <label class="lab1">Nome</label><br>
+        <input id="nome" class="inp1" type="text" placeholder="Digite seu nome..." required><br>
+
+        <label class="lab2">Sobrenome</label><br>
+        <input class="row2 inp2" type="text" placeholder="Digite seu sobrenome..." required><br>
+
+
+        <label class="lab3">Telefone</label><br>
+        <input id="tel" class="inp3" type="number" placeholder="Ex: 55 11 99999-9999" required><br>
+
+        <label class="lab4">Unidades de Retirada:</label><br>
+        <select class="inp4" id="unid" required>
+            <option selected disabled>Unidades Disponiveis</option>
+            <option>Unidade Casa Verde</option>
+            <option>Unidade Santana</option>
+            <option>Unidade Pinheiros</option> 
+            <option>Unidade Av. Imirim</option>
+            <option>Unidade Vila Madalena</option>
+        </select><br><br>
+
+        <label class="lab5">Observação:</label>
+        <input class="inp5"  id="obs" type="text" placeholder="Tem alguma preferência? Nos diga os detalhes...." maxlength="50">
+        
+        <p id="valor"></p>
+
+        <button type="submit">Confirmar</button>
+
+
+</div>
+</form>
+
+<div class="image">
+    <img src="IMG/bolofundo.png" alt="" data-speed="-3" class="move">
+</div>
+
+<h1 class="titulo">DOCE <span>ENCANTO</span></h1>
+
+
+
+<script src="forms.js"></script>
+
+</body>
+</html>
